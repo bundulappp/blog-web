@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, FooterComponent],
   imports: [CommonModule, HttpClientModule, ToastrModule.forRoot()],
-  exports: [HttpClientModule, HeaderComponent],
+  exports: [HttpClientModule, HeaderComponent, FooterComponent],
 })
 export class SharedModule {}
