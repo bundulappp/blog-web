@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { StorageService } from '../service/localstorage.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private storageService: StorageService
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +40,17 @@ export class LoginComponent implements OnInit {
           }
         },
         error: () => {
-          this.toastr.error('Sikertelen bejelentkezés!');
+          const isEmailNotConfirmed =
+            this.storageService.getItem('user_registered_at');
+
+          if (isEmailNotConfirmed) {
+            this.toastr.warning(
+              'Kérjük, ellenőrizze a postafiókját és kövesse az emailben található utasításokat a megerősítéshez',
+              'Email cím még nincs megerősítve'
+            );
+          } else {
+            this.toastr.error('Sikertelen bejelentkezés!');
+          }
         },
       });
     }

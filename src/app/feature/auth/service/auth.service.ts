@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RegistrationRequestModel } from 'src/app/shared/models/auth/RegistrationRequestModel';
 import { Observable, tap } from 'rxjs';
 import { environment } from 'src/app/environments/environment';
-import { UserViewModel } from 'src/app/shared/models/auth/UserViewModel';
+import { RegistrationRequestModel } from 'src/app/shared/models/auth/RegistrationRequestModel';
 import { LoginRequestModel } from 'src/app/shared/models/auth/LoginRequestModel';
 import { StorageService } from './storage.service';
 import { UserRegisterViewModel } from 'src/app/shared/models/auth/UserRegisterViewModel';
 import { Router } from '@angular/router';
-import { UserUpdateRequestModel } from 'src/app/shared/models/auth/update/UserUpdateRequestModel';
+import { UserViewModel } from 'src/app/shared/models/auth/UserViewModel';
+import { UserUpdateRequestModel } from 'src/app/shared/models/auth/UserUpdateRequestModel';
 import { UserUpdateViewModel } from 'src/app/shared/models/auth/update/UserUpdateViewModel';
-import { UserResetPasswordRequestModel } from 'src/app/shared/models/auth/update/UserResetPasswordRequestModel';
 import { UserForgotPasswordRequestModel } from 'src/app/shared/models/auth/update/UserForgotPasswordRequestModel';
 import { UserForgotPasswordViewModel } from 'src/app/shared/models/auth/update/UserForgotPasswordViewModel';
+import { UserResetPasswordRequestModel } from 'src/app/shared/models/auth/update/UserResetPasswordRequestModel';
 import { UserChangePasswordRequestModel } from 'src/app/shared/models/auth/update/UserChangePasswordRequestModel';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -26,7 +27,12 @@ export class AuthService {
     private http: HttpClient,
     private storageService: StorageService,
     private router: Router
-  ) {}
+  ) {
+    const userData = this.storageService.getItem(this.userLoginKey);
+    if (!!userData) {
+      this.userInformation = JSON.parse(userData);
+    }
+  }
 
   register(user: RegistrationRequestModel): Observable<UserRegisterViewModel> {
     return this.http
