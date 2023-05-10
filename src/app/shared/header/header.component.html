@@ -1,9 +1,18 @@
-<header class="bg-blue-500 text-white shadow-md">
-  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-    <a href="#" class="text-xl font-bold">Blogger</a>
-    <nav class="space-x-4">
-      <a href="#" class="hover:text-blue-200">Home</a>
-      <a href="#" class="hover:text-blue-200">My Blogs</a>
-    </nav>
+<header>
+  <div class="header-mobil flex lg:hidden">
+    <div class="search">
+      <div class="input-field">
+        <input type="text" placeholder="search" />
+        <img src="assets/icons/search.svg" alt="search-icon" />
+      </div>
+    </div>
+    <div class="navigation">
+      <div class="img-container">
+        <img src="assets/icons/user-regular.svg" alt="user-options" />
+        <img src="assets/icons/hamburger-menu.svg" alt="navigation-menu" />
+      </div>
+    </div>
   </div>
+
+  <div class="header-desktop hidden lg:block">desktop</div>
 </header>
