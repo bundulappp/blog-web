@@ -10,10 +10,18 @@
       <div class="img-container">
         <img src="assets/icons/house-solid.svg" alt="home" />
         <img src="assets/icons/user-regular.svg" alt="user-options" />
-        <img src="assets/icons/hamburger-menu.svg" alt="navigation-menu" />
+        <img
+          (click)="toggleMobNavLinks()"
+          src="assets/icons/hamburger-menu.svg"
+          alt="navigation-menu"
+        />
       </div>
     </div>
   </div>
 
   <div class="header-desktop hidden lg:block">desktop</div>
 </header>
+
+<div class="nav-links-mob lg:hidden" [@displayMobNavLinks]="mobNavLinksState">
+  <app-nav-links-mob></app-nav-links-mob>
+</div>

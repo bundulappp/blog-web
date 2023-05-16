@@ -1,0 +1,21 @@
+@import "/src/styles/variables";
+
+.main-mob-container {
+  background-color: $color-background;
+  width: min(100vw, 465px);
+  height: calc(100vh - 189px);
+  padding: 20px 0;
+
+  li {
+    display: block;
+    font-size: 22px;
+    padding: 15px 20px;
+    color: $color-accent;
+    border-bottom: 1.5px solid $color-divider-dark;
+
+    &:hover {
+      background-color: $color-accent;
+      color: $color-background;
+    }
+  }
+}
