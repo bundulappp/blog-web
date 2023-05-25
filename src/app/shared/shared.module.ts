@@ -8,6 +8,9 @@ import { NavLinksMobComponent } from './header/nav-links-mob/nav-links-mob.compo
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
   declarations: [HeaderComponent, NavBarComponent, NavLinksMobComponent],
@@ -18,6 +21,9 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
     NzLayoutModule,
     NzMenuModule,
     NzBreadCrumbModule,
+    NzFormModule,
+    NzInputModule,
+    NzButtonModule,
   ],
   exports: [
     HttpClientModule,
@@ -26,6 +32,9 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
     NzLayoutModule,
     NzMenuModule,
     NzBreadCrumbModule,
+    NzFormModule,
+    NzInputModule,
+    NzButtonModule,
   ],
 })
 export class SharedModule {}

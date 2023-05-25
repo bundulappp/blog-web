@@ -8,9 +8,16 @@ import { ProfileComponent } from './profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  declarations: [RegisterComponent, LoginComponent, ProfileComponent, ForgotPasswordComponent, ResetPasswordComponent],
-  imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule],
+  declarations: [
+    RegisterComponent,
+    LoginComponent,
+    ProfileComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
+  ],
+  imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, SharedModule],
 })
 export class AuthModule {}
