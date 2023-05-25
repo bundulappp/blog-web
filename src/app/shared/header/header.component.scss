@@ -1,57 +1,11 @@
-.header-mobil {
-  height: 50px;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 0.5px solid grey;
-  background-color: #5ec282;
-  .search {
-    margin-left: 30px;
-    height: 20px;
+.logo {
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  float: left;
 
-    .input-field {
-      position: relative;
-      cursor: pointer;
-
-      input {
-        outline: 1px solid grey;
-        border-radius: 2px;
-      }
-      input:hover {
-        outline: 2px solid rgb(159, 223, 191);
-        transition: 0.2s;
-      }
-      textarea:focus,
-      input:focus {
-        outline: 2px solid rgb(159, 223, 191);
-      }
-
-      img {
-        position: absolute;
-        right: 10px;
-        top: 5px;
-        height: 15px;
-        width: 15px;
-        cursor: pointer;
-      }
-    }
+  img {
+    width: 30px;
+    height: 30px;
   }
-
-  .navigation {
-    .img-container {
-      display: flex;
-      justify-content: space-between;
-      margin-right: 10px;
-      img {
-        margin-left: 10px;
-        height: 15px;
-        width: 15px;
-        cursor: pointer;
-      }
-    }
-  }
-}
-
-.nav-links-mob {
-  position: fixed;
-  z-index: 2;
 }

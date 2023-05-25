@@ -1,9 +1,21 @@
-.main-container {
-  display: flex;
-  flex-direction: column;
+[nz-menu] {
+  line-height: 64px;
 }
 
-.header-container {
-  position: sticky;
-  top: 0;
+nz-breadcrumb {
+  margin: 16px 0;
+}
+
+nz-content {
+  padding: 0 50px;
+}
+
+nz-footer {
+  text-align: center;
+}
+
+.inner-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
 }

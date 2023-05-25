@@ -1,27 +1,16 @@
-<header>
-  <div class="header-mobil flex lg:hidden">
-    <div class="search">
-      <div class="input-field">
-        <input type="text" placeholder="search" />
-        <img src="assets/icons/search.svg" alt="search-icon" />
-      </div>
-    </div>
-    <div class="navigation">
-      <div class="img-container">
-        <img src="assets/icons/house-solid.svg" alt="home" />
-        <img src="assets/icons/user-regular.svg" alt="user-options" />
-        <img
-          (click)="toggleMobNavLinks()"
-          src="assets/icons/hamburger-menu.svg"
-          alt="navigation-menu"
-        />
-      </div>
-    </div>
+<nz-header>
+  <div class="logo">
+    <img src="/assets/icons/blog-solid.svg" alt="app-logo" />
   </div>
 
-  <div class="header-desktop hidden lg:block">desktop</div>
-</header>
-
-<div class="nav-links-mob lg:hidden" [@displayMobNavLinks]="mobNavLinksState">
-  <app-nav-links-mob></app-nav-links-mob>
-</div>
+  <ul
+    nz-menu
+    nzTheme="dark"
+    nzMode="horizontal"
+    class="header-menu hidden lg:block"
+  >
+    <li nz-menu-item nzSelected>nav 1</li>
+    <li nz-menu-item>nav 2</li>
+    <li nz-menu-item>nav 3</li>
+  </ul>
+</nz-header>
