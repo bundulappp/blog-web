@@ -11,6 +11,7 @@ import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
+import { MainModule } from './feature/main/main.module';
 
 registerLocaleData(en);
 
@@ -23,6 +24,7 @@ registerLocaleData(en);
     SharedModule,
     FormsModule,
     HttpClientModule,
+    MainModule,
   ],
   providers: [
     {
