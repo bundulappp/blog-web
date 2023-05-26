@@ -1,15 +1,30 @@
-.login-form {
-  max-width: 300px;
-}
+.main-wrapper {
+  height: 100vh;
+  min-width: 350px;
 
-.login-form-margin {
-  margin-bottom: 16px;
-}
+  .header {
+    margin-left: 120px;
+    margin-bottom: 30px;
+    h2 {
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 32px;
+    }
+  }
 
-.login-form-forgot {
-  float: right;
-}
+  .login-form {
+    max-width: 300px;
+  }
 
-.login-form-button {
-  width: 100%;
+  .login-form-margin {
+    margin-bottom: 16px;
+  }
+
+  .login-form-forgot {
+    float: right;
+  }
+
+  .login-form-button {
+    width: 100%;
+  }
 }
