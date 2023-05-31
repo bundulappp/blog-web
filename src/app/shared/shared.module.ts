@@ -9,6 +9,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 @NgModule({
   declarations: [HeaderComponent, NavBarComponent],
@@ -21,6 +22,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     NzFormModule,
     NzInputModule,
     NzButtonModule,
+    NzAvatarModule,
   ],
   exports: [
     HttpClientModule,
@@ -31,6 +33,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     NzFormModule,
     NzInputModule,
     NzButtonModule,
+    NzAvatarModule,
   ],
 })
 export class SharedModule {}
