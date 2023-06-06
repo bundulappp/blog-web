@@ -1,3 +1,6 @@
 <div class="main-container" *ngFor="let item of itemList">
-  <app-blog-item [itemSample]="item"></app-blog-item>
+  <app-blog-item
+    [itemSample]="item"
+    (click)="navigateToBlogById(item.id)"
+  ></app-blog-item>
 </div>

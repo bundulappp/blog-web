@@ -5,9 +5,10 @@ import { MainComponent } from './main.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogItemComponent } from './blog-list/blog-item/blog-item.component';
+import { BlogViewComponent } from './blog-view/blog-view.component';
 
 @NgModule({
-  declarations: [MainComponent, BlogListComponent, BlogItemComponent],
+  declarations: [MainComponent, BlogListComponent, BlogItemComponent, BlogViewComponent],
   imports: [CommonModule, MainRoutingModule, SharedModule],
 })
 export class MainModule {}

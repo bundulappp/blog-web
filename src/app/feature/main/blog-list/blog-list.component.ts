@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog-list',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 export class BlogListComponent {
   itemList = [
     {
+      id: 1,
       author: {
         id: 1,
         name: 'The Secret Developer',
@@ -25,6 +27,7 @@ export class BlogListComponent {
       },
     },
     {
+      id: 2,
       author: {
         id: 1,
         name: 'The Secret Developer',
@@ -42,8 +45,9 @@ export class BlogListComponent {
       },
     },
     {
+      id: 3,
       author: {
-        id: 1,
+        id: 3,
         name: 'The Secret Developer',
         picSrc: '/assets/photo/pexels-pixabay-220453.jpg',
       },
@@ -59,8 +63,9 @@ export class BlogListComponent {
       },
     },
     {
+      id: 4,
       author: {
-        id: 1,
+        id: 4,
         name: 'The Secret Developer',
         picSrc: '/assets/photo/pexels-pixabay-220453.jpg',
       },
@@ -76,4 +81,10 @@ export class BlogListComponent {
       },
     },
   ];
+
+  constructor(private router: Router) {}
+
+  navigateToBlogById(id: number): void {
+    this.router.navigate([`main/${id}`]);
+  }
 }
