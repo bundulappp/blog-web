@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-blog-item',
@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class BlogItemComponent {
   loading = false;
+  @Input() itemSample: any;
+
+ 
 }

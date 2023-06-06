@@ -1,33 +1,29 @@
 <div class="main-wrapper">
   <div class="item-left">
     <div class="author-data-container">
-      <nz-avatar [nzSize]="55" nzShape="circle">
-        <img
-          src="/assets/photo/pexels-antonio-batinić-4164418.jpg"
-          alt="profile-picture"
-        />
+      <nz-avatar
+        class="hidden lg:block"
+        [nzSize]="55"
+        nzShape="square"
+        [nzSrc]="itemSample.author.picSrc"
+      >
       </nz-avatar>
+      <p class="author-name">{{ itemSample.author.name }}</p>
+      <p>{{ itemSample.date }}</p>
     </div>
     <div class="content">
-      <h2>Angular vs. React vs. Vue: A 2017 comparison</h2>
-      <p>
-        Deciding on a JavaScript framework for your web application can be
-        overwhelming. Angular and React are very popular these days, and there
-        is an upstart which has been getting a lot of traction lately: VueJS.
-      </p>
+      <h3>{{ itemSample.title }}</h3>
+      <p class="hidden lg:block">{{ itemSample.body | slice : 0 : 100 }}...</p>
     </div>
-    <div class="about">
-      <ul>
-        <li>Angular</li>
-        <li>5 min read</li>
-        <li>Because you follow Typescript</li>
+    <div class="about-container">
+      <ul class="about">
+        <button nz-button nzType="text">Angular</button>
+        <button nz-button nzType="text">4 min read</button>
+        <button nz-button nzType="text">Based on your reading history</button>
       </ul>
     </div>
   </div>
   <div class="item-right">
-    <img
-      src="/assets/photo/pexels-antonio-batinić-4164418.jpg"
-      alt="blog-photo"
-    />
+    <img [src]="itemSample.itemPicSrc" alt="blog-photo" />
   </div>
 </div>
