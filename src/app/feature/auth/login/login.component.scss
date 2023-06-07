@@ -3,13 +3,9 @@
   min-width: 350px;
 
   .header {
-    margin-left: 120px;
+    display: flex;
+    justify-content: center;
     margin-bottom: 30px;
-    h2 {
-      font-weight: 500;
-      font-size: 25px;
-      line-height: 32px;
-    }
   }
 
   .login-form {
@@ -20,11 +16,7 @@
     margin-bottom: 16px;
   }
 
-  .login-form-forgot {
-    float: right;
-  }
-
   .login-form-button {
-    width: 100%;
+    margin-right: 20px;
   }
 }
