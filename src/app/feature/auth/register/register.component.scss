@@ -1,0 +1,18 @@
+.main-wrapper {
+  height: 100vh;
+  min-width: 350px;
+
+  .header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .register-form {
+    max-width: 300px;
+
+    .back-to-login {
+      margin-left: 20px;
+    }
+  }
+}
