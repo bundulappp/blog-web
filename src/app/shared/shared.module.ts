@@ -10,7 +10,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
-
+import { NzSelectModule } from 'ng-zorro-antd/select';
 @NgModule({
   declarations: [HeaderComponent, NavBarComponent],
   imports: [
@@ -23,6 +23,7 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
     NzInputModule,
     NzButtonModule,
     NzAvatarModule,
+    NzSelectModule,
   ],
   exports: [
     HttpClientModule,
@@ -34,6 +35,7 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
     NzInputModule,
     NzButtonModule,
     NzAvatarModule,
+    NzSelectModule,
   ],
 })
 export class SharedModule {}
