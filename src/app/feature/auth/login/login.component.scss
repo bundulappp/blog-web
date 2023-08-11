@@ -1,11 +1,16 @@
 .main-wrapper {
   height: 100vh;
+  width: 100%;
   min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .header {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+    margin-top: 20px;
   }
 
   .login-form {

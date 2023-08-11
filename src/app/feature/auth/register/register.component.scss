@@ -1,18 +1,26 @@
 .main-wrapper {
   height: 100vh;
+  width: 100%;
   min-width: 350px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .header {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+    margin-top: 20px;
   }
 
   .register-form {
     max-width: 300px;
+  }
 
-    .back-to-login {
-      margin-left: 20px;
-    }
+  .register-form-margin {
+    margin-bottom: 16px;
+  }
+
+  .register-form-button {
+    margin-right: 20px;
   }
 }

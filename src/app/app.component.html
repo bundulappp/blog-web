@@ -3,32 +3,14 @@
   <nz-layout>
     <nz-sider class="hidden lg:block" nzWidth="200px" nzTheme="light">
       <ul nz-menu nzMode="inline" class="sider-menu">
-        <li nz-submenu nzOpen nzIcon="menu" nzTitle="Menu">
+        <li nz-submenu nzOpen nzIcon="menu" nzTitle="User Menu">
           <ul>
-            <li nz-menu-item nzSelected routerLink="auth/login">
-              Login/Register
-            </li>
-            <li nz-menu-item>option2</li>
+            <li nz-menu-item routerLink="auth/login">Login/Register</li>
+            <li nz-menu-item routerLink="auth/profile">Settings</li>
             <li nz-menu-item>option3</li>
             <li nz-menu-item>option4</li>
           </ul>
         </li>
-        <!-- <li nz-submenu nzTitle="subnav 2" nzIcon="laptop">
-          <ul>
-            <li nz-menu-item>option5</li>
-            <li nz-menu-item>option6</li>
-            <li nz-menu-item>option7</li>
-            <li nz-menu-item>option8</li>
-          </ul>
-        </li>
-        <li nz-submenu nzTitle="subnav 3" nzIcon="notification">
-          <ul>
-            <li nz-menu-item>option9</li>
-            <li nz-menu-item>option10</li>
-            <li nz-menu-item>option11</li>
-            <li nz-menu-item>option12</li>
-          </ul>
-        </li> -->
       </ul>
     </nz-sider>
     <nz-layout>
@@ -38,27 +20,11 @@
             <li nz-menu-item nzSelected routerLink="/auth/login">
               Login/Register
             </li>
-            <li nz-menu-item>option2</li>
+            <li nz-menu-item>Settings</li>
             <li nz-menu-item>option3</li>
             <li nz-menu-item>option4</li>
           </ul>
         </li>
-        <!-- <li nz-submenu nzTitle="subnav 2" nzIcon="laptop">
-          <ul>
-            <li nz-menu-item>option5</li>
-            <li nz-menu-item>option6</li>
-            <li nz-menu-item>option7</li>
-            <li nz-menu-item>option8</li>
-          </ul>
-        </li>
-        <li nz-submenu nzTitle="subnav 3" nzIcon="notification">
-          <ul>
-            <li nz-menu-item>option9</li>
-            <li nz-menu-item>option10</li>
-            <li nz-menu-item>option11</li>
-            <li nz-menu-item>option12</li>
-          </ul>
-        </li> -->
       </ul>
       <nz-content>
         <router-outlet></router-outlet>

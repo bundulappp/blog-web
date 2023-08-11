@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  registerUser(): void {
+  register(): void {
     console.log('register...');
   }
 
