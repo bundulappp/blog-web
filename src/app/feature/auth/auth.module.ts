@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { AccountPageComponent } from './profile/account-page/account-page.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ProfileComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
+    AccountPageComponent,
   ],
   imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, SharedModule],
 })
