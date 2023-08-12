@@ -1,1 +1,23 @@
-<p>profile works!</p>
+<div class="main-container">
+  <h2 class="title">Settings</h2>
+  <nz-tabset nzLinkRouter class="navigation">
+    <nz-tab>
+      <a *nzTabLink nz-tab-link [routerLink]="['account']"> Account </a>
+    </nz-tab>
+    <nz-tab>
+      <a *nzTabLink nz-tab-link [routerLink]="['.']"> Two </a>
+      Two.
+    </nz-tab>
+    <nz-tab>
+      <a *nzTabLink nz-tab-link [routerLink]="['.']"> Three </a>
+      Three.
+    </nz-tab>
+    <nz-tab>
+      <a *nzTabLink nz-tab-link [routerLink]="['.']"> Four </a>
+      Four.
+    </nz-tab>
+  </nz-tabset>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
