@@ -12,6 +12,10 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [HeaderComponent, NavBarComponent],
   imports: [
@@ -26,6 +30,10 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
     NzAvatarModule,
     NzSelectModule,
     NzTabsModule,
+    NzPopconfirmModule,
+    NzModalModule,
+    NzUploadModule,
+    FormsModule,
   ],
   exports: [
     HttpClientModule,
@@ -39,6 +47,10 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
     NzAvatarModule,
     NzSelectModule,
     NzTabsModule,
+    NzPopconfirmModule,
+    NzModalModule,
+    NzUploadModule,
+    FormsModule,
   ],
 })
 export class SharedModule {}
