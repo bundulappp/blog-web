@@ -24,10 +24,13 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 62.5%;
 }
 
 body {
   font-family: "Trebuchet MS";
+  font-size: 2.4rem;
+  color: var(--color-body);
 }
 
 h1,
@@ -36,69 +39,86 @@ h3,
 h4,
 label {
   font-weight: 500;
+  color: var(--color-headings);
 }
 
 h1 {
-  font-size: 30px;
-  line-height: 38px;
+  font-size: 7rem;
+  line-height: 3.8rem;
 }
 
 h2 {
-  font-size: 25px;
-  line-height: 32px;
+  font-size: 4rem;
+  line-height: 3.2rem;
 }
 
 h3 {
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 3rem;
+  line-height: 2.8rem;
 }
 
 h4 {
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 2rem;
+  line-height: 2rem;
 }
 
-p {
-  font-size: 18px;
-  line-height: 28px;
+p,
+a {
+  font-size: 1.8rem;
+  line-height: 2rem;
 }
 
 label,
 .caption {
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+
+button {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 2rem 3rem;
+  white-space: nowrap;
+  margin: 1rem 0;
 }
 
 // Desktop
 @media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.8rem;
+  }
+
   h1 {
-    font-size: 42px;
-    line-height: 52px;
+    font-size: 8rem;
+    line-height: 5.2rem;
   }
 
   h2 {
-    font-size: 36px;
-    line-height: 42px;
+    font-size: 4em;
+    line-height: 4.2rem;
   }
 
   h3 {
-    font-size: 30px;
-    line-height: 38px;
+    font-size: 2.4rem;
+    line-height: 3.8rem;
   }
 
   h4 {
-    font-size: 25px;
-    line-height: 34px;
+    font-size: 2rem;
+    line-height: 3.4rem;
   }
 
-  p {
-    font-size: 22px;
-    line-height: 34px;
+  p,
+  a {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    margin: 4rem 0;
   }
 
   label,
   .caption {
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
   }
 }
