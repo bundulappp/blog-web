@@ -36,42 +36,46 @@ body {
 h1,
 h2,
 h3,
-h4,
-label {
+h4 {
   font-weight: 500;
   color: var(--color-headings);
 }
 
+body {
+  font-size: 1.8rem;
+}
+
 h1 {
-  font-size: 7rem;
-  line-height: 3.8rem;
+  font-size: 8rem;
+  line-height: 5.2rem;
 }
 
 h2 {
-  font-size: 4rem;
-  line-height: 3.2rem;
+  font-size: 4em;
+  line-height: 4.2rem;
 }
 
 h3 {
-  font-size: 3rem;
-  line-height: 2.8rem;
+  font-size: 2.4rem;
+  line-height: 3.8rem;
 }
 
 h4 {
   font-size: 2rem;
-  line-height: 2rem;
+  line-height: 3.4rem;
 }
 
 p,
 a {
   font-size: 1.8rem;
-  line-height: 2rem;
+  line-height: 1.8rem;
+  margin: 4rem 0;
 }
 
 label,
 .caption {
-  font-size: 1.4rem;
-  line-height: 2.4rem;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
 }
 
 button {
@@ -85,40 +89,35 @@ button {
 
 // Desktop
 @media screen and (min-width: 1024px) {
-  body {
-    font-size: 1.8rem;
-  }
-
   h1 {
-    font-size: 8rem;
-    line-height: 5.2rem;
+    font-size: 7rem;
+    line-height: 3.8rem;
   }
 
   h2 {
-    font-size: 4em;
-    line-height: 4.2rem;
+    font-size: 5rem;
+    line-height: 3.2rem;
   }
 
   h3 {
-    font-size: 2.4rem;
-    line-height: 3.8rem;
+    font-size: 3rem;
+    line-height: 2.8rem;
   }
 
   h4 {
     font-size: 2rem;
-    line-height: 3.4rem;
+    line-height: 2rem;
   }
 
   p,
   a {
     font-size: 1.8rem;
-    line-height: 1.8rem;
-    margin: 4rem 0;
+    line-height: 2rem;
   }
 
   label,
   .caption {
-    font-size: 1.6rem;
-    line-height: 2.8rem;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
   }
 }
