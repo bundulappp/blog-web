@@ -1,13 +1,10 @@
 export interface UserViewModel {
-  jwt: string;
-  user: {
-    id: number;
-    firstName: string;
-    lastName: string;
-    email: string;
-    confirmed: boolean;
-    blocked: boolean;
-    token: string;
-    refreshToken: string;
-  };
+  id: number;
+  username: string;
+  password: string;
+  email: string;
+  isActive: boolean;
+  isVerified: boolean;
+  createdAt: Date;
+  updatedAt: Date;
 }

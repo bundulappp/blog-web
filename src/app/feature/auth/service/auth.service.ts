@@ -14,6 +14,7 @@ import { UserForgotPasswordRequestModel } from 'src/app/shared/models/auth/updat
 import { UserForgotPasswordViewModel } from 'src/app/shared/models/auth/update/UserForgotPasswordViewModel';
 import { UserResetPasswordRequestModel } from 'src/app/shared/models/auth/update/UserResetPasswordRequestModel';
 import { UserChangePasswordRequestModel } from 'src/app/shared/models/auth/update/UserChangePasswordRequestModel';
+import { UserLoginResponseModel } from 'src/app/shared/models/auth/update/UserLoginResponseModel';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +22,7 @@ import { UserChangePasswordRequestModel } from 'src/app/shared/models/auth/updat
 export class AuthService {
   userRegisterKey: string = 'user_registered_at';
   userLoginKey: string = 'user';
-  userInformation: UserViewModel | undefined;
+  userInformation: UserLoginResponseModel | undefined;
 
   constructor(
     private http: HttpClient,
@@ -50,11 +51,14 @@ export class AuthService {
       );
   }
 
-  login(loginData: LoginRequestModel): Observable<UserViewModel> {
+  login(loginData: LoginRequestModel): Observable<UserLoginResponseModel> {
     return this.http
-      .post<UserViewModel>(environment.apiUrl + '/auth/local', loginData)
+      .post<UserLoginResponseModel>(
+        environment.apiUrl + '/auth/local',
+        loginData
+      )
       .pipe(
-        tap((userData: UserViewModel) => {
+        tap((userData: UserLoginResponseModel) => {
           this.setCurrentUser(userData);
         })
       );
@@ -76,7 +80,7 @@ export class AuthService {
     );
   }
 
-  setCurrentUser(userData: UserViewModel): void {
+  setCurrentUser(userData: UserLoginResponseModel): void {
     this.storageService.clear();
     this.userInformation = userData;
     this.storageService.setItem(this.userLoginKey, JSON.stringify(userData));
