@@ -1,12 +1,11 @@
 .main-container {
-  max-width: 500px;
+  max-width: 50rem;
   display: flex;
   flex-direction: column;
   .options {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px;
     height: auto;
 
     .title-divider {
@@ -15,22 +14,17 @@
       align-items: flex-start;
 
       .extra-info {
-        font-size: 14px;
+        font-size: 1.4rem;
         color: grey;
-      }
-      .user-data-title {
-        font-size: 18px;
-        line-height: 28px;
-        margin-right: 50px;
       }
     }
     .content-divider {
       display: flex;
       align-items: center;
       .user-data {
-        font-size: 18px;
+        font-size: 1.8rem;
         color: grey;
-        margin-right: 10px;
+        margin-right: 1rem;
       }
     }
   }

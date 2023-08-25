@@ -1,12 +1,17 @@
 .main-container {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  min-width: 35rem;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 5rem;
 
-  .title {
-    margin: 20px 0 0 20px;
+  .header {
+    margin: 4rem 0;
   }
-  .navigation {
-    margin-left: 20px;
+
+  button {
+    margin: 0 !important;
   }
 }
 
