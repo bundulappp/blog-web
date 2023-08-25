@@ -6,6 +6,14 @@
 @import "ngx-toastr/toastr";
 //variables
 @import "/src/styles/variables";
+
+:root {
+  --color-primary: #272be3;
+  --color-secondary: #0068a8;
+  --color-accent: #c70000;
+  --color-headings: #342c49;
+  --color-body: #aea8ba;
+}
 *,
 *::before,
 *::after {
