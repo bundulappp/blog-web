@@ -1,27 +1,28 @@
 .main-wrapper {
   height: 100vh;
   width: 100%;
-  min-width: 350px;
+  min-width: 35rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 3rem 5rem;
 
   .header {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    margin-top: 20px;
+    margin: 4rem 0;
   }
 
   .login-form {
-    max-width: 300px;
+    max-width: 30rem;
+
+    input {
+      padding: 0.5rem 0;
+    }
   }
 
   .login-form-margin {
-    margin-bottom: 16px;
+    margin-bottom: 1.6rem;
   }
 
   .login-form-button {
-    margin-right: 20px;
+    margin-right: 2rem;
   }
 }

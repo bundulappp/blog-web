@@ -27,11 +27,6 @@
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
-    <div nz-row class="login-form-margin">
-      <div nz-col [nzSpan]="12">
-        <a class="login-form-forgot">Forgot password</a>
-      </div>
-    </div>
     <button
       nz-button
       class="login-form-button login-form-margin"
@@ -43,5 +38,8 @@
     <a class="login-form-forgot" (click)="navigateToRegister()"
       >or register now!</a
     >
+    <div>
+      <a class="login-form-forgot">Forgot password</a>
+    </div>
   </form>
 </div>
