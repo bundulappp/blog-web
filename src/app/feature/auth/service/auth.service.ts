@@ -1,6 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import {
+  BehaviorSubject,
+  Observable,
+  debounceTime,
+  fromEvent,
+  map,
+  merge,
+  tap,
+} from 'rxjs';
 import { environment } from 'src/app/environments/environment';
 import { RegistrationRequestModel } from 'src/app/shared/models/auth/RegistrationRequestModel';
 import { LoginRequestModel } from 'src/app/shared/models/auth/LoginRequestModel';
@@ -23,6 +31,19 @@ export class AuthService {
   userRegisterKey: string = 'user_registered_at';
   userLoginKey: string = 'user';
   userInformation: UserLoginResponseModel | undefined;
+  private timeout: number = 10 * 60 * 1000; // 10 minutes in milliseconds
+  private userActivityEvents = [
+    'click',
+    'mousewheel',
+    'touchstart',
+    'touchmove',
+  ];
+  private activityChange$ = new BehaviorSubject<boolean>(true);
+
+  private _userInformation = new BehaviorSubject<
+    UserLoginResponseModel | undefined
+  >(undefined);
+  userInformation$ = this._userInformation.asObservable();
 
   constructor(
     private http: HttpClient,
@@ -32,7 +53,9 @@ export class AuthService {
     const userData = this.storageService.getItem(this.userLoginKey);
     if (!!userData) {
       this.userInformation = JSON.parse(userData);
+      this._userInformation.next(this.userInformation);
     }
+    this.monitorUserActivity();
   }
 
   register(user: RegistrationRequestModel): Observable<UserRegisterViewModel> {
@@ -84,6 +107,23 @@ export class AuthService {
     this.storageService.clear();
     this.userInformation = userData;
     this.storageService.setItem(this.userLoginKey, JSON.stringify(userData));
+    this._userInformation.next(userData);
+  }
+
+  private monitorUserActivity(): void {
+    const userEvents$ = merge(
+      ...this.userActivityEvents.map((event) => fromEvent(document, event))
+    ).pipe(map(() => true));
+
+    const inactivityTimer$ = userEvents$.pipe(
+      debounceTime(this.timeout),
+      tap(() => {
+        this.activityChange$.next(false);
+        this.logout(); // Log out the user when there's inactivity
+      })
+    );
+
+    merge(userEvents$, inactivityTimer$).subscribe(this.activityChange$);
   }
 
   userDelete(): Observable<UserUpdateViewModel> {
