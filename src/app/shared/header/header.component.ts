@@ -10,5 +10,7 @@ import { AuthService } from 'src/app/feature/auth/service/auth.service';
 export class HeaderComponent {
   userInformation$ = this.authService.userInformation$;
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService) {
+    console.log(this.userInformation$);
+  }
 }
