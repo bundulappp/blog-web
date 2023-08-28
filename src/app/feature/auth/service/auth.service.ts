@@ -60,10 +60,7 @@ export class AuthService {
 
   register(user: RegistrationRequestModel): Observable<UserRegisterViewModel> {
     return this.http
-      .post<UserRegisterViewModel>(
-        environment.apiUrl + '/auth/local/register',
-        user
-      )
+      .post<UserRegisterViewModel>(environment.apiUrl + '/users/register', user)
       .pipe(
         tap((userData: UserRegisterViewModel) => {
           this.storageService.setItem(
@@ -77,7 +74,7 @@ export class AuthService {
   login(loginData: LoginRequestModel): Observable<UserLoginResponseModel> {
     return this.http
       .post<UserLoginResponseModel>(
-        environment.apiUrl + '/auth/local',
+        environment.apiUrl + '/users/login',
         loginData
       )
       .pipe(
@@ -98,7 +95,7 @@ export class AuthService {
     userData: UserUpdateRequestModel
   ): Observable<UserUpdateViewModel> {
     return this.http.put<UserUpdateViewModel>(
-      environment.apiUrl + '/user/me',
+      environment.apiUrl + '/users',
       userData
     );
   }
@@ -128,7 +125,7 @@ export class AuthService {
 
   userDelete(): Observable<UserUpdateViewModel> {
     return this.http
-      .put<UserUpdateViewModel>(environment.apiUrl + '/user/me', {
+      .put<UserUpdateViewModel>(environment.apiUrl + '/users/deactive', {
         blocked: true,
         confirmed: false,
       })
@@ -139,31 +136,31 @@ export class AuthService {
       );
   }
 
-  forgotPassword(
-    userData: UserForgotPasswordRequestModel
-  ): Observable<UserForgotPasswordViewModel> {
-    return this.http.post<UserForgotPasswordViewModel>(
-      environment.apiUrl + '/auth/forgot-password',
-      {
-        email: userData.email,
-      }
-    );
-  }
+  // forgotPassword(
+  //   userData: UserForgotPasswordRequestModel
+  // ): Observable<UserForgotPasswordViewModel> {
+  //   return this.http.post<UserForgotPasswordViewModel>(
+  //     environment.apiUrl + '/auth/forgot-password',
+  //     {
+  //       email: userData.email,
+  //     }
+  //   );
+  // }
 
-  resetPassword(
-    userData: UserResetPasswordRequestModel
-  ): Observable<UserViewModel> {
-    return this.http.post<UserViewModel>(
-      environment.apiUrl + '/auth/reset-password',
-      userData
-    );
-  }
+  // resetPassword(
+  //   userData: UserResetPasswordRequestModel
+  // ): Observable<UserViewModel> {
+  //   return this.http.post<UserViewModel>(
+  //     environment.apiUrl + '/auth/reset-password',
+  //     userData
+  //   );
+  // }
 
   changePassword(
     userData: UserChangePasswordRequestModel
   ): Observable<UserViewModel> {
     return this.http.post<UserViewModel>(
-      environment.apiUrl + '/auth/change-password',
+      environment.apiUrl + '/users/change-password',
       userData
     );
   }
