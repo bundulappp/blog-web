@@ -1,9 +1,39 @@
 <nz-header>
-  <div class="logo hidden lg:block">
-    <img src="/assets/icons/blog-solid.svg" alt="app-logo" />
+  <div class="mobile-menu block lg:hidden">
+    <img
+      class="menu-logo"
+      src="/assets/icons/bars-solid.svg"
+      alt="menu-logo"
+      nz-dropdown
+      [nzDropdownMenu]="menu"
+    />
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu nzSelectable>
+        <li nz-menu-item>Home</li>
+        <li nz-menu-item>2nd menu item</li>
+        <li nz-menu-item>3rd menu item</li>
+        <li
+          nz-submenu
+          nzTitle="Profile"
+          *ngIf="userInformation$ | async as userInformation"
+        >
+          <ul>
+            <li nz-menu-item>Settings</li>
+            <li nz-menu-item>Logout</li>
+          </ul>
+        </li>
+      </ul>
+    </nz-dropdown-menu>
   </div>
-
-  <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
+  <div class="logo hidden lg:block">
+    <img class="logo-img" src="/assets/icons/blog-solid.svg" alt="app-logo" />
+  </div>
+  <ul
+    nz-menu
+    nzTheme="dark"
+    nzMode="horizontal"
+    class="header-menu hidden lg:block"
+  >
     <li nz-menu-item>Home</li>
     <li nz-menu-item>Categories</li>
     <li nz-menu-item>About</li>
