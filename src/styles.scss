@@ -12,7 +12,7 @@
   --color-secondary: #0068a8;
   --color-accent: #c70000;
   --color-headings: #342c49;
-  --color-body: #aea8ba;
+  --color-body: #b9aecf;
 }
 *,
 *::before,
@@ -30,7 +30,6 @@ html {
 body {
   font-family: "Trebuchet MS";
   font-size: 2.4rem;
-  color: var(--color-body);
 }
 
 h1,
