@@ -17,6 +17,8 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { FormsModule } from '@angular/forms';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+
 @NgModule({
   declarations: [HeaderComponent, NavBarComponent],
   imports: [
@@ -36,6 +38,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
     NzUploadModule,
     FormsModule,
     NzDropDownModule,
+    NzDividerModule,
   ],
   exports: [
     HttpClientModule,
@@ -54,6 +57,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
     NzUploadModule,
     FormsModule,
     NzDropDownModule,
+    NzDividerModule,
   ],
 })
 export class SharedModule {}

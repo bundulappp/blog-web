@@ -1,25 +1,29 @@
-<div class="main-wrapper">
+<div class="main-wrapper grid--1x2">
   <div class="item-left">
     <div class="author-data-container">
       <nz-avatar
-        class="hidden lg:block"
         [nzSize]="55"
-        nzShape="square"
+        nzShape="circle"
         [nzSrc]="itemSample.author.picSrc"
       >
       </nz-avatar>
       <p class="author-name">{{ itemSample.author.name }}</p>
-      <p>{{ itemSample.date }}</p>
     </div>
     <div class="content">
-      <h3>{{ itemSample.title }}</h3>
-      <p class="hidden lg:block">{{ itemSample.body | slice : 0 : 100 }}...</p>
+      <h3 class="title">{{ itemSample.title }}</h3>
+      <p class="hidden lg:block body-text">
+        {{ itemSample.body | slice : 0 : 200 }}...
+      </p>
     </div>
-    <div class="about-container">
+    <div class="hidden lg:block">
       <ul class="about">
-        <button nz-button nzType="text">Angular</button>
-        <button nz-button nzType="text">4 min read</button>
-        <button nz-button nzType="text">Based on your reading history</button>
+        <div>
+          <span>Angular</span>
+          <nz-divider nzType="vertical"></nz-divider>
+          <span>4 min read</span>
+          <nz-divider nzType="vertical"></nz-divider>
+          <span>{{ itemSample.date }}</span>
+        </div>
       </ul>
     </div>
   </div>
@@ -27,3 +31,4 @@
     <img [src]="itemSample.itemPicSrc" alt="blog-photo" />
   </div>
 </div>
+<nz-divider></nz-divider>
