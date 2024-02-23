@@ -9,17 +9,13 @@
     />
     <nz-dropdown-menu #menu="nzDropdownMenu">
       <ul nz-menu nzSelectable>
+        <li nz-menu-item *ngIf="!(userInformation$ | async)">Login</li>
         <li nz-menu-item>Home</li>
-        <li nz-menu-item>2nd menu item</li>
-        <li nz-menu-item>3rd menu item</li>
-        <li
-          nz-submenu
-          nzTitle="Profile"
-          *ngIf="userInformation$ | async as userInformation"
-        >
+        <li nz-menu-item>About</li>
+        <li nz-submenu *ngIf="userInformation$ | async" nzTitle="Profile">
           <ul>
             <li nz-menu-item>Settings</li>
-            <li nz-menu-item>Logout</li>
+            <li nz-menu-item *ngIf="userInformation$ | async">Logout</li>
           </ul>
         </li>
       </ul>
@@ -34,9 +30,9 @@
     nzMode="horizontal"
     class="header-menu hidden lg:block"
   >
-    <li nz-menu-item>Home</li>
-    <li nz-menu-item>Categories</li>
-    <li nz-menu-item>About</li>
     <li nz-menu-item *ngIf="!(userInformation$ | async)">Login</li>
+    <li nz-menu-item>Home</li>
+    <li nz-menu-item>About</li>
+    <li nz-menu-item *ngIf="userInformation$ | async">Logout</li>
   </ul>
 </nz-header>
