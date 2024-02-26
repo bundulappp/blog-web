@@ -9,12 +9,18 @@
     />
     <nz-dropdown-menu #menu="nzDropdownMenu">
       <ul nz-menu nzSelectable>
-        <li nz-menu-item *ngIf="!(userInformation$ | async)">Login</li>
-        <li nz-menu-item>Home</li>
+        <li
+          nz-menu-item
+          *ngIf="!(userInformation$ | async)"
+          (click)="navigateToLogin()"
+        >
+          Login
+        </li>
+        <li nz-menu-item (click)="navigatoToMain()">Home</li>
         <li nz-menu-item>About</li>
         <li nz-submenu *ngIf="userInformation$ | async" nzTitle="Profile">
           <ul>
-            <li nz-menu-item>Settings</li>
+            <li nz-menu-item (click)="navigateToSettings()">Settings</li>
             <li nz-menu-item *ngIf="userInformation$ | async">Logout</li>
           </ul>
         </li>
@@ -30,9 +36,20 @@
     nzMode="horizontal"
     class="header-menu hidden lg:block"
   >
-    <li nz-menu-item *ngIf="!(userInformation$ | async)">Login</li>
-    <li nz-menu-item>Home</li>
+    <li
+      nz-menu-item
+      *ngIf="!(userInformation$ | async)"
+      (click)="navigateToLogin()"
+    >
+      Login
+    </li>
+    <li nz-menu-item (click)="navigatoToMain()">Home</li>
+    <li nz-submenu *ngIf="userInformation$ | async" nzTitle="Profile">
+      <ul>
+        <li nz-menu-item (click)="navigateToSettings()">Settings</li>
+        <li nz-menu-item *ngIf="userInformation$ | async">Logout</li>
+      </ul>
+    </li>
     <li nz-menu-item>About</li>
-    <li nz-menu-item *ngIf="userInformation$ | async">Logout</li>
   </ul>
 </nz-header>

@@ -10,7 +10,17 @@ import { AuthService } from 'src/app/feature/auth/service/auth.service';
 export class HeaderComponent {
   userInformation$ = this.authService.userInformation$;
 
-  constructor(private router: Router, private authService: AuthService) {
-    console.log(this.userInformation$);
+  constructor(private router: Router, private authService: AuthService) {}
+
+  navigatoToMain(): void {
+    this.router.navigate(['/main']);
+  }
+
+  navigateToSettings(): void {
+    this.router.navigate(['/auth/profile']);
+  }
+
+  navigateToLogin(): void {
+    this.router.navigate(['/auth/login']);
   }
 }
